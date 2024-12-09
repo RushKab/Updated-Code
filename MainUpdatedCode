@@ -1,31 +1,28 @@
 historical_events = {
-    1900: [""],
-    1910: [""],
-    1920: [""],
-    1930: [""],
-    1940: [""],
-    1950: [""],
+    1900: {"": [""], "": [""]},
+    1910: {"": [""], "": [""]},
+    1920: {"": [""], "": [""]},
+    1930: {"": [""], "": [""]},
+    1940: {"": [""], "": [""]},
+    1950: {"": [""], "": [""]},
 }
-
-def history_event(year):
+def history_event(year, category):
     if year in historical_events:
-        return historical_events[year]
-    else:
-        return ["no history found"]
-
+        if category in historical_events[year]:
+            return historical_events[year][category]
+    return ["no history found"]
 ask_again = "y"
 while ask_again == "y": 
     year_input = input("enter a year: ")
-    
-    if year_input:
+    category_input = input("enter a category ")
+    if year_input and category_input:
         year = int(year_input)
-        events = history_event(year)
+        events = history_event(year, category_input)
         print(f"historical events in {year}:")
         for event in events:
-            print(f"{event}")
+            print(f" {event}")
     else:
         print("invalid year")
-
     ask_again = input("again? y/n: ")
     if ask_again == 'n':
         print("goodbye")
