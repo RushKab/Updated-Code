@@ -1,10 +1,25 @@
 historical_events = {
-    1900: {"": [""], "": [""]},
-    1910: {"": [""], "": [""]},
-    1920: {"": [""], "": [""]},
-    1930: {"": [""], "": [""]},
-    1940: {"": [""], "": [""]},
-    1950: {"": [""], "": [""]},
+    1800: {"scientific": [""], "literature": [""]},
+    1810: {"scientific": [""], "literature": [""]},
+    1820: {"scientific": [""], "literature": [""]},
+    1830: {"scientific": [""], "literature": [""]},
+    1840: {"scientific": [""], "literature": [""]},
+    1850: {"scientific": [""], "literature": [""]},
+    1860: {"scientific": [""], "literature": [""]},
+    1870: {"scientific": [""], "literature": [""]},
+    1880: {"scientific": [""], "literature": [""]},
+    1890: {"scientific": [""], "literature": [""]},
+    1900: {"scientific": [""], "literature": [""]},
+    1910: {"scientific": [""], "literature": [""]},
+    1920: {"scientific": [""], "literature": [""]},
+    1930: {"scientific": [""], "literature": [""]},
+    1940: {"scientific": [""], "literature": [""]},
+    1950: {"scientific": [""], "literature": [""]},
+    1960: {"scientific": [""], "literature": [""]},
+    1970: {"scientific": [""], "literature": [""]},
+    1980: {"scientific": [""], "literature": [""]},
+    1990: {"scientific": [""], "literature": [""]},
+    2000: {"scientific": [""], "literature": [""]},
 }
 def history_event(year, category):
     if year in historical_events:
@@ -13,8 +28,10 @@ def history_event(year, category):
     return ["no history found"]
 ask_again = "y"
 while ask_again == "y": 
+    print("Please enter a year.")
     year_input = input("enter a year: ")
-    category_input = input("enter a category ")
+    print("Now, please enter a category of two scientific/literature")
+    category_input = input("enter a category: ")
     if year_input and category_input:
         year = int(year_input)
         events = history_event(year, category_input)
